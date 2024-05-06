@@ -1,0 +1,20 @@
+{
+  "foodList": [
+    {
+      "id": "1",
+      "name": "Cachorro-quente"
+    },
+    {
+      "id": "2",
+      "name": "Pastel de carne"
+    },
+    {
+      "id": "3",
+      "name": "Caldo de cana"
+    },
+    {
+      "id": "4",
+      "name": "Batata frita"
+    }
+  ]
+}

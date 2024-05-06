@@ -1,0 +1,68 @@
+<form #form="ngForm" (ngSubmit)="submitForm(form)">
+  <div>
+    <label for="nome">
+      Nome completo
+    </label>
+    <input #nome="ngModel" [ngModel]="nome.value" required name="nome" type="text">
+    @if (nome.invalid && (nome.dirty && nome.touched)) {
+      <span>Nome inválido!</span>
+    }
+  </div>
+
+  <div>
+    <label for="sexo">
+      <input ngModel type="radio" name="sexo" value="masculino" >
+      <label for="sexo">Masculino</label>
+    </label>
+  </div>
+
+  <div>
+    <label for="sexo">
+      <input ngModel type="radio" name="sexo" value="feminino">
+      <label for="sexo">Feminino</label>
+    </label>
+  </div>
+
+  <div>
+    <label>Tem conhecimento em algum dos frameworks?</label>
+  </div>
+
+  <div class="framework">
+    <label for="framework">
+      <input ngModel type="checkbox" name="angular" value="angular">
+      <label for="angular">Angular</label>
+    </label>
+
+    <label for="framework">
+      <input ngModel type="checkbox" name="reactjs" value="reactjs">
+      <label for="framework">ReactJS</label>
+    </label>
+
+    <label for="framework">
+      <input ngModel type="checkbox" name="vuejs" value="vuejs">
+      <label for="framework">VueJS</label>
+    </label>
+  </div>
+
+  <div>
+    <label for="estado">Selecione seu estado:</label>
+    <select ngModel name="estado">
+      <option value="" disabled>Selecione seu estado aqui</option>
+      @for (estado of estadosDoBrasil; track $index) {
+        <option [ngValue]="estado">
+          {{ estado.nome }} - {{ estado.sigla }}
+        </option>
+      }
+    </select>
+  </div>
+
+  <div>
+    <button type="submit" [disabled]="form.invalid">Enviar candidatura</button>
+  </div>
+</form>
+
+
+<div class="jsonView">
+  <p>{{ form.value | json }}</p>
+  <p>Formulário válido: {{ form.valid ? 'sim' : 'não' }}</p>
+</div>
