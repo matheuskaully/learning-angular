@@ -1,0 +1,50 @@
+* {
+  font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
+form {
+  h1 {
+    width: 100%;
+    margin: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  display: flex;
+  flex-direction: column;
+  max-width: 380px;
+  width: 100%;
+  margin: auto;
+
+  label {
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .alert {
+    font-weight: 700;
+    color: red;
+  }
+
+  button {
+    margin-top: 16px;
+    padding: 4px;
+  }
+}
+
+.validators {
+  color: green;
+  font-weight: 700;
+}
+
+.disabled {
+  cursor: not-allowed;
+  opacity: 50%;
+}
+
+.allowed {
+  cursor: pointer;
+}
+
+

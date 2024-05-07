@@ -1,0 +1,38 @@
+<form [formGroup]="cadastroForm" (ngSubmit)="submitForm()">
+  <h1>Register in gamezoo!</h1>
+
+  <label for="name">
+    <span>Your full name</span>
+    <input formControlName="fullName" type="text" placeholder="Type your full name">
+    @if (cadastroForm.get('fullName')?.errors && (cadastroForm.get('fullName')?.dirty || cadastroForm.get('fullName')?.touched)) {
+     <span class="alert">Full name is required! type your name</span>
+    }
+  </label>
+
+  <label for="email">
+    <span>Your e-mail address</span>
+    <input formControlName="email" type="email" placeholder="Type your e-mail address">
+  </label>
+
+  <label for="password">
+    <span>Type your password</span>
+    <input formControlName="password" type="password" placeholder="Type your password">
+  </label>
+
+  <label for="confirmPassword">
+    <span>Confirm your password</span>
+    <input formControlName="confirmPassword" type="password" placeholder="Type your password">
+
+    @if (cadastroForm.get('password')?.value != (cadastroForm.get('confirmPassword')?.value)) {
+      <span class="alert">Different password</span>
+     }
+  </label>
+
+  <button [ngClass]="cadastroForm.invalid ? 'disabled' : 'allowed'" type="submit">Enviar</button>
+  <div class="validators">
+    <p>Fullname validator: {{ cadastroForm.get('fullName')?.errors | json }}</p>
+    <p>E-mail validator: {{ cadastroForm.get('email')?.errors | json }}</p>
+    <p>Password validator: {{ cadastroForm.get('password')?.errors | json }}</p>
+    <p>Confirm password validator: {{ cadastroForm.get('confirmPassword')?.errors | json }}</p>
+  </div>
+</form>
