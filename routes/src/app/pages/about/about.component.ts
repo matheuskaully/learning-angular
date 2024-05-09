@@ -29,6 +29,6 @@ export class AboutComponent implements OnInit {
     setInterval(() => {
       this.route.navigate(['404'])
       // this.route.navigateByUrl('404')
-    }, 2000)
+    }, 5000)
   }
 }

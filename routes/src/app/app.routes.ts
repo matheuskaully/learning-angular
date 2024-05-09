@@ -14,8 +14,20 @@ export const routes: Routes = [
     component: HomeComponent,
   },
   {
-    path: 'about/:id/:username',
+    path: 'about',
     component: AboutComponent,
+    //rota filha
+    children: [
+      {
+        path: ':id/:username',
+        component: AboutComponent,
+      },
+    ]
+  },
+  {
+    path: 'dashboard',
+    loadChildren: () => import('./dashboard/dashboard.module')
+    .then(module => module.DashboardModule)
   },
   {
     path: '404',

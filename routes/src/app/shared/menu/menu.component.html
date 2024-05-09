@@ -1,13 +1,15 @@
 <nav>
   <div>
-    <a [routerLink]="['/']" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
+    <a [routerLink]="['/']" [routerLinkActive]="['active']">
       gamezoo
     </a>
   </div>
   <div>
     <ul>
-      <li><a [routerLink]="['/home']" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">home</a></li>
-      <li><a [routerLink]="['/about']" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">about</a></li>
+      <!-- [routerLinkActiveOptions]="{exact: true}" -->
+      <li><a [routerLink]="['/home']" [routerLinkActive]="['active']">home</a></li>
+      <li><a [routerLink]="['/about']" [routerLinkActive]="['active']">about</a></li>
+      <li><a [routerLink]="['/dashboard']" [routerLinkActive]="['active']">dashboard</a></li>
     </ul>
   </div>
 </nav>
