@@ -1,0 +1,6 @@
+.dot {
+  transition: transform 0.3s;
+}
+input:checked ~ .dot {
+  transform: translateX(100%);
+}
